@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JalRakshak - Authentication &amp; Role Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d4073",
+                        "aqua": "#36B372",
+                        "background-light": "#fafafa",
+                        "background-dark": "#1a1f23",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .role-card-active {
+            border: 3px solid #36B372;
+            background-color: rgba(54, 179, 114, 0.05);
+        }
+        .language-pill {
+            transition: all 0.2s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0e141b] font-display min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">water_drop</span>
+<h2 class="text-primary dark:text-white text-xl font-extrabold leading-tight tracking-tight">JalRakshak</h2>
+</div>
+<div class="flex bg-slate-200 dark:bg-slate-700 p-1 rounded-full items-center">
+<button class="px-3 py-1 text-xs font-extrabold rounded-full bg-white dark:bg-slate-800 shadow-sm text-primary">ENGLISH</button>
+<button class="px-3 py-1 text-xs font-bold rounded-full text-slate-500 dark:text-slate-400">हिन्दी</button>
+</div>
+</div>
+<main class="max-w-md mx-auto p-4 flex flex-col gap-6">
+<!-- Hero/Headline Section -->
+<div class="pt-6 pb-2">
+<h1 class="text-[#0e141b] dark:text-white text-3xl font-extrabold leading-tight mb-2">Welcome</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Clean water for all. Please choose how you will use the app.</p>
+</div>
+<!-- Role Selection Section -->
+<section class="flex flex-col gap-4">
+<h3 class="text-[#0e141b] dark:text-white text-sm font-extrabold uppercase tracking-wider">Select your role</h3>
+<div class="grid grid-cols-1 gap-3">
+<!-- Citizen Role -->
+<div class="group relative flex items-center p-5 bg-white dark:bg-slate-800 rounded-xl border-2 border-slate-100 dark:border-slate-700 shadow-sm hover:border-aqua transition-all cursor-pointer">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary mr-4">
+<span class="material-symbols-outlined text-3xl font-bold">home</span>
+</div>
+<div class="flex-1">
+<h4 class="text-[#0e141b] dark:text-white text-xl font-extrabold">Citizen</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Report issues &amp; track water quality</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<!-- Local Operator Role -->
+<div class="group relative flex items-center p-5 bg-white dark:bg-slate-800 rounded-xl border-2 border-aqua shadow-sm transition-all cursor-pointer">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-aqua/10 text-aqua mr-4">
+<span class="material-symbols-outlined text-3xl font-bold">build</span>
+</div>
+<div class="flex-1">
+<h4 class="text-[#0e141b] dark:text-white text-xl font-extrabold">Local Operator</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Manage pumps &amp; daily operations</p>
+</div>
+<div class="absolute -top-2 -right-2 bg-aqua text-white text-[10px] font-extrabold px-2 py-1 rounded-md shadow-sm">SELECTED</div>
+</div>
+<!-- Admin Role -->
+<div class="group relative flex items-center p-5 bg-white dark:bg-slate-800 rounded-xl border-2 border-slate-100 dark:border-slate-700 shadow-sm hover:border-aqua transition-all cursor-pointer">
+<div class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 mr-4">
+<span class="material-symbols-outlined text-3xl font-bold">shield_person</span>
+</div>
+<div class="flex-1">
+<h4 class="text-[#0e141b] dark:text-white text-xl font-extrabold">Admin</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">System oversight &amp; data reports</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Login Form Section -->
+<section class="mt-4 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[#0e141b] dark:text-white text-sm font-extrabold uppercase tracking-wider" for="mobile">Mobile Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="text-slate-400 font-bold">+91</span>
+</div>
+<input class="block w-full pl-14 pr-4 py-4 bg-white dark:bg-slate-800 border-none rounded-xl shadow-md focus:ring-2 focus:ring-primary text-lg font-bold placeholder:font-normal placeholder:text-slate-400 text-[#0e141b] dark:text-white" id="mobile" placeholder="Enter 10 digit number" type="tel"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl text-lg font-extrabold shadow-lg shadow-primary/20 transition-transform active:scale-[0.98]">
+                Login to Continue
+            </button>
+<div class="flex items-center gap-4 py-2">
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+<span class="text-slate-400 text-xs font-bold uppercase">New User?</span>
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+</div>
+<button class="w-full bg-white dark:bg-slate-800 border-2 border-primary/20 text-primary dark:text-white py-4 rounded-xl text-lg font-extrabold transition-all hover:bg-primary/5">
+                Register Now
+            </button>
+</section>
+<!-- Footer Help -->
+<footer class="mt-8 mb-10 text-center">
+<a class="flex items-center justify-center gap-2 text-aqua font-bold" href="#">
+<span class="material-symbols-outlined text-xl">help_center</span>
+                Need help logging in?
+            </a>
+<div class="mt-6 flex flex-wrap justify-center gap-6 opacity-30 grayscale">
+<div class="h-8 w-24 bg-contain bg-no-repeat bg-center" data-alt="Government of India logo placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCta5d8FTRNdHIY2AzpHoj6NUpYCHrckPvNa8Q4koKrM4CkvB9rx-Zo6fJSvB8nqLBqN6yCATUix7Oj860QI0sf-3GtEj0d580CililEalX3DV86vvXuEamcOFUpii0FxgUObPD9LqVTM3cpB94mkeoZPDxI095ExTOyzZpHKElynw0rvocdDjmXEvmGA_rQvfhcITbnP3Zu_y1DqGsBe-idn_jNoQ3KMbQHUbCOgxbYgH2wmcLGhyD5okdKqzKtsccL40hzvry4ns');"></div>
+<div class="h-8 w-24 bg-contain bg-no-repeat bg-center" data-alt="Jal Jeevan Mission logo placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCO-ux7Bfqb8SoSOxT5ipUnnsdmq_IKFciiTc7fT2We1SfGhmZn6INgvlcaczfw6ichdFApoLexoWHrJTOdBrVVPTr01GdZge0eew2cIrh8D6wLHSGPWyyuOs0Fdd9uoa-Bo3sgfTwAi-_5cuZiNX9tpkteVGl3w-h45NqYmBWiK-yNVOxwSTM44Dzi_6304xREuJ95fzHsHL1D-_PxAFSOtnBbJQpqXduYyGLVafk_vamfUfBf2AyX75GfqUBo2BFsVjnB4weqxQ');"></div>
+</div>
+</footer>
+</main>
+<!-- Visual Background Element -->
+<div class="fixed bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-aqua to-primary opacity-50"></div>
+</body></html>

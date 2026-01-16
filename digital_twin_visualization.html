@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JalRakshak | Digital Twin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e5e6",
+                        "background-light": "#ffffff",
+                        "background-dark": "#111317",
+                        "surface-dark": "#1a1e23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(26, 30, 35, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(25, 229, 230, 0.2);
+        }
+        .map-gradient-overlay {
+            background: radial-gradient(circle at center, transparent 0%, rgba(17, 19, 23, 0.6) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white overflow-hidden select-none">
+<!-- Top Navigation Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 px-4 pt-6 pb-4 bg-gradient-to-b from-background-dark/90 to-transparent">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<h1 class="text-xs font-bold tracking-[0.2em] uppercase text-primary">JalRakshak</h1>
+</div>
+<h2 class="text-xl font-medium tracking-tight">Digital Twin</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="glass-panel p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+</button>
+<div class="glass-panel h-10 w-10 rounded-full overflow-hidden border-2 border-primary/30">
+<img class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZSRVxCAoK6gGXfWbeuoVnTAewQbew8beaZeDGr3vnZ6b1eZOtaz59gW-c7AKOzVkOZ5jtrBx4QT27wjZ8PqpntxnRmWebjK6e4okND0sXyBUWgdY0qVIrSifyWPSYNWJcEgikrgUuOlTBFBnI9V2l0DNWkmo95eZKDAepVgGhRnC3Hio9hbpLe6zNTh6SO2Zegz1KmQqh60UlW1LN4l0lJ75YYR_Mw443omPRTm07kOYbHfD6yVat0DfwPT9nPNZkhxQPDprBhw"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Map Container -->
+<div class="relative h-screen w-full bg-background-dark overflow-hidden">
+<!-- Background Map (Placeholder for interactive 3D map) -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-screen" data-alt="Dark topographical map of urban water networks" data-location="Varanasi, India" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARLfW55e3kgMafQqVGjXRFUAnca4Qe_xl_gjGQHcieiryZJIJ4tGk_v3S7g9IYb5fiTaTtAFc_P3MBT9Sai-jC8r-VTqPxfY6czmTbtZRmWqluUbRzvpnvbnSM-s_pBSgWvttmXxGBJoOUYAX7LgAgnAovsreXUqMvkK5EDRHxbSGX3CbuxBmHikzjdYAtgCGzHBwY1QgWS1rkLRRGdBsHPQZEl_gWk1gdQte4aQy_QxiQuSJAbqOvWVDN5rnu-q6XcQOBi-hDsds");'>
+</div>
+<!-- Map Gradient Overlay -->
+<div class="absolute inset-0 map-gradient-overlay pointer-events-none"></div>
+<!-- Floating UI Elements: HUD Metrics -->
+<div class="absolute top-24 left-4 right-4 flex gap-3 overflow-x-auto no-scrollbar pb-4">
+<div class="glass-panel min-w-[140px] p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] font-bold text-primary/70 uppercase tracking-widest">Filtered</span>
+<span class="text-lg font-bold">1.2M L</span>
+<div class="flex items-center gap-1 text-[10px] text-primary">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+<span>+12% Today</span>
+</div>
+</div>
+<div class="glass-panel min-w-[140px] p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] font-bold text-primary/70 uppercase tracking-widest">Avg. pH</span>
+<span class="text-lg font-bold">7.2</span>
+<div class="flex items-center gap-1 text-[10px] text-green-400">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>Stable</span>
+</div>
+</div>
+<div class="glass-panel min-w-[140px] p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] font-bold text-primary/70 uppercase tracking-widest">BOD Level</span>
+<span class="text-lg font-bold">15 mg/L</span>
+<div class="flex items-center gap-1 text-[10px] text-orange-400">
+<span class="material-symbols-outlined text-[12px]">warning</span>
+<span>Moderate</span>
+</div>
+</div>
+</div>
+<!-- Map Interaction Buttons -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+<button class="glass-panel w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">layers</span>
+</button>
+<button class="glass-panel w-12 h-12 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">3d_rotation</span>
+</button>
+<div class="flex flex-col glass-panel rounded-xl overflow-hidden mt-2">
+<button class="w-12 h-12 flex items-center justify-center border-b border-white/10 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="bg-primary text-background-dark w-12 h-12 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(25,229,230,0.4)]">
+<span class="material-symbols-outlined">near_me</span>
+</button>
+</div>
+<!-- Live Data Node Marker -->
+<div class="absolute top-[60%] left-[30%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full animate-ping"></div>
+<div class="w-4 h-4 bg-primary rounded-full border-2 border-white shadow-[0_0_10px_rgba(25,229,230,1)]"></div>
+</div>
+<!-- Marker Tooltip -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-panel p-3 rounded-lg min-w-[160px] opacity-100 transition-opacity">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-[11px] font-bold uppercase tracking-tight">Assi Ghat Node</h4>
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-[10px]">
+<div class="flex flex-col">
+<span class="text-white/50">Flow Rate</span>
+<span class="text-primary font-mono">2.4 m/s</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white/50">Turbidity</span>
+<span class="text-primary font-mono">18 NTU</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Simulation Toggle Controller -->
+<div class="absolute bottom-32 left-4 right-4 flex justify-center">
+<div class="glass-panel p-1.5 rounded-full flex items-center w-full max-w-[320px] relative">
+<div class="flex h-11 w-full items-center justify-center rounded-full bg-surface-dark/50 p-1 relative">
+<!-- Toggle Slider Indicator (Simulation) -->
+<label class="relative flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-full px-4 transition-all duration-300 has-[:checked]:bg-primary has-[:checked]:text-background-dark text-primary/60">
+<span class="text-[11px] font-bold uppercase tracking-widest z-10">Live Reality</span>
+<input checked="" class="invisible absolute w-0" name="sim_mode" type="radio" value="live"/>
+</label>
+<label class="relative flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-full px-4 transition-all duration-300 has-[:checked]:bg-primary has-[:checked]:text-background-dark text-primary/60">
+<span class="text-[11px] font-bold uppercase tracking-widest z-10">AI Projection</span>
+<input class="invisible absolute w-0" name="sim_mode" type="radio" value="ai"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Detail Card & Nav -->
+<div class="absolute bottom-0 left-0 right-0 p-4 pt-10 bg-gradient-to-t from-background-dark via-background-dark/95 to-transparent">
+<div class="glass-panel p-4 rounded-2xl flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-cover bg-center border border-primary/20" data-alt="Micro wastewater treatment unit thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_qOcCGmJMA5uCYlfMfUtQm9TzFth953Glnyc49S9D2sDrXx3R5L136yAbZ0vb4yXJIbAlLKoeZmskAnw8fuRV-5dKOraJE01RlGvMBzCPQEG7MtbBo_8VTLuje4U27TjkqOinnlmRNBcSKsBJjwOYNlaW1dDAx_hKvluvAj7tmZ2Ez-3lhjDUYYMGZ3RpY-IeIDW_bjKJwOqlC6KbzD5gbfKIPTwCOtRbRYNgVpvkzNWXZd2K3J6v9A5ICSoAV3Hc3UubykMDKwY");'>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-sm">Treatment Unit A-14</h3>
+<span class="text-[10px] px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30">ACTIVE</span>
+</div>
+<p class="text-xs text-white/60 mt-1">Decentralized plant processing 50k L/day</p>
+<div class="flex gap-4 mt-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">water_drop</span>
+<span class="text-[10px] font-mono">98% Purity</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">bolt</span>
+<span class="text-[10px] font-mono">Solar Powered</span>
+</div>
+</div>
+</div>
+<button class="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Hidden Search/Filter Bar Layer -->
+<div class="fixed top-24 left-4 right-4 z-40 hidden">
+<div class="glass-panel flex items-center px-4 h-12 rounded-xl">
+<span class="material-symbols-outlined text-primary/50 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-white/30" placeholder="Search water nodes or units..." type="text"/>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JalRakshak - Citizen Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22c3a8",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#1a1d21",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2d343c",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .ios-shadow { shadow-[0_4px_12px_rgba(0,0,0,0.05)] }
+        .glass-effect { backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.8); }
+        .dark .glass-effect { background-color: rgba(33, 38, 44, 0.8); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0f1a18] dark:text-gray-100 font-display transition-colors duration-300">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 glass-effect border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary">
+<div class="bg-center bg-no-repeat aspect-square bg-cover size-full" data-alt="User profile photo avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCywKigpXmaf61bxH1-ZfT4t9s3tqr9yoUqi9YnDBnAC-DsVxazgvrPVW7N3wNckg4m24PeWFNQNzAZBmgUGLvDgVB9Wt8wnEast5BR1xeDK3FWLFwfjvB_-uCC07slajjvgQV5T3a0obv8DHGE9GGQXZx1GQ-4mXAfz3GCXWw-xbfGdgwEZVX-RrUf0iq4e_hL6CSpSCblVwBSNeSbnOzGBrZsLTIDHB_s0WlGXc8zse3rpHYxGE5dH5oWINOi6xnfD4gqGHztclU");'></div>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Namaste, Arjun</p>
+<h2 class="text-[#0f1a18] dark:text-white text-lg font-bold leading-tight tracking-tight">Bengaluru East</h2>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-32 px-4 pt-4 space-y-6">
+<!-- Water Quality Hero Card -->
+<section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-[#18a18b] p-6 text-white shadow-xl shadow-primary/20">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-white/80 text-sm font-medium">Local Water Quality</p>
+<h3 class="text-4xl font-extrabold mt-1">82<span class="text-lg font-normal opacity-70">/100</span></h3>
+</div>
+<div class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold border border-white/30 uppercase tracking-wider">
+                        Excellent
+                    </div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4">
+<div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10">
+<p class="text-[10px] uppercase opacity-70 font-bold mb-1">pH Level</p>
+<p class="text-lg font-bold">7.2</p>
+</div>
+<div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10">
+<p class="text-[10px] uppercase opacity-70 font-bold mb-1">TDS</p>
+<p class="text-lg font-bold">150</p>
+</div>
+<div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10">
+<p class="text-[10px] uppercase opacity-70 font-bold mb-1">Turbid</p>
+<p class="text-lg font-bold">2.1</p>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-xs text-white/70 italic">Updated 12 mins ago from Varthur Stn.</p>
+<button class="text-xs font-bold flex items-center gap-1 group">
+                        Full Report <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Decorative wave background -->
+<div class="absolute -bottom-4 -right-4 opacity-10">
+<span class="material-symbols-outlined text-[180px]">water_drop</span>
+</div>
+</section>
+<!-- Stats: Water Credits -->
+<section>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest">Jal Credits</p>
+<p class="text-2xl font-extrabold text-[#0f1a18] dark:text-white">1,250 <span class="text-sm font-medium text-primary">JC</span></p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-xl shadow-md shadow-primary/30">
+                    REDEEM
+                </button>
+</div>
+</section>
+<!-- Map Section -->
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="text-lg font-extrabold text-gray-800 dark:text-gray-100">Nearby Alerts</h3>
+<span class="text-xs font-bold text-primary">3 Active Issues</span>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-800" data-alt="Interactive map of Bengaluru with color-coded water quality markers" data-location="Bengaluru, India" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCB9bwzMdXW1yVARgE1lQ5WpJBF_3dDFSajrVXIMJst0f8AOWK0pQy693US5sPSFV1A7wVW7lPwxbDbxzi6E5wsRMpLomscrV0glrb2wHImrWdsgLYkLprpFoudI3c-XYEju3qNH36Ez_-65SgVlTqOadSTnBPb8332RjWwRNRl72vwbLMGxwtU6wYZDGj1BENux-zJg-oO73QbGfIo9l2M7xSD_BWqmYdO_DLhFwyjn4Vj9g9MXZ51IF6Np2_dRwzzGoUvSZby1vY");'>
+<!-- Custom Map Pin -->
+<div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-white dark:bg-gray-800 p-1 px-2 rounded-lg shadow-xl mb-1 border border-gray-200 dark:border-gray-700">
+<p class="text-[10px] font-bold text-red-500">Pollution Alert</p>
+</div>
+<div class="size-4 rounded-full bg-red-500 border-2 border-white animate-pulse"></div>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-xl">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold">Industrial Runoff Detected</p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400">Bellandur Lake Area • 0.8 km away</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Activity Feed -->
+<section>
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-lg font-extrabold text-gray-800 dark:text-gray-100">Community Feed</h3>
+<button class="text-xs font-bold text-gray-400">View All</button>
+</div>
+<div class="space-y-4">
+<!-- Activity Item 1 -->
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-4 border border-gray-100 dark:border-gray-800 flex gap-4">
+<div class="size-16 shrink-0 rounded-xl bg-cover bg-center" data-alt="Photo of a successful water body cleanup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCi5D1qde32xbsanku29cTOtGb5T6oAUj7KAsoskZToXXDqDEyO1EF_3RTTLrfmCPOmmgTpGoPAAj-Pm_YVRCsKl7u4rwTQMNggH9J-fqAJ2UrPrrL-FurgHV1L8LGSUqoo_GRprDNlJ0E_YvdLldnf9KRbTwNRs8ZMmmOI1LElIcF21AteSPG__pPJmz3Ul00JylFH81M-KMY8mdYhyKmeqgrSLJipzIVWg9mBPapz__CZFE0IcJFhyBMWIUbau3RhRZpYX8sEf6o");'></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary mb-1">Impact Resolved</p>
+<p class="text-sm font-bold leading-snug">Bellandur Inlet Pipeline fixed after community report.</p>
+<div class="flex items-center gap-3 mt-2">
+<span class="text-[10px] font-medium text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">thumb_up</span> 124
+                            </span>
+<span class="text-[10px] font-medium text-gray-400">2h ago</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-4 border border-gray-100 dark:border-gray-800 flex gap-4">
+<div class="size-16 shrink-0 rounded-xl bg-cover bg-center" data-alt="Community volunteers testing water quality" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiwxrPa-YmkUfjLcnD84YpogkGSZlhaaskpdeKQYWlSwd9OxYYiydCmSjmT83PdTJiKkoxCwvk6Q_ZhWsYJGL66ERzzERApBXl_d28VtghVf7UTwCLHGqC09mBer4sSJ_fspnvp5A-P1uft2ac2--rNq6lf7YoqRpz3yd6HCV4NZTdg-HW3DS7iVATYT8ABpYMf8GHFlt1LMeIVfAdqxIGa7_L9C86nfbY9y-RtFLJtBe8haGgwlGyVyW_SEXWOr2ZtZaGykTrk40");'></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-blue-500 mb-1">New Event</p>
+<p class="text-sm font-bold leading-snug">Weekend Lake Testing Drive in Indiranagar. Join us!</p>
+<div class="flex items-center gap-3 mt-2">
+<span class="text-[10px] font-medium text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">group</span> 48 Going
+                            </span>
+<span class="text-[10px] font-medium text-gray-400">5h ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Tab Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 pb-8 pt-2 z-50">
+<div class="max-w-md mx-auto flex justify-around items-end px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-[24px]">map</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<!-- Center Action Button -->
+<div class="relative -top-8">
+<button class="size-16 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex flex-col items-center justify-center border-4 border-background-light dark:border-background-dark group">
+<span class="material-symbols-outlined text-[30px]">photo_camera</span>
+</button>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary whitespace-nowrap">REPORT</span>
+</div>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+<span class="text-[10px] font-bold">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="text-[10px] font-bold">Social</span>
+</a>
+</div>
+</nav>
+</body></html>

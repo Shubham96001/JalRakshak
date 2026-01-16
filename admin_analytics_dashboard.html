@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JalRakshak Admin Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137c86",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#1a1f23",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0e191b] dark:text-white min-h-screen pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">water_drop</span>
+</div>
+<div>
+<h2 class="text-[#0e191b] dark:text-white text-lg font-extrabold leading-tight tracking-tight">JalRakshak</h2>
+<p class="text-xs text-primary font-medium">Admin Dashboard</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm border border-[#d1e4e6] dark:border-gray-700">
+<span class="material-symbols-outlined text-[#0e191b] dark:text-white" style="font-size: 20px;">notifications</span>
+</button>
+<button class="flex items-center justify-center px-4 h-10 bg-primary text-white rounded-full gap-2 text-sm font-bold shadow-md shadow-primary/20">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+<span>Report</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="px-4 mt-2">
+<div class="flex border-b border-[#d1e4e6] dark:border-gray-800 gap-6">
+<a class="flex flex-col items-center border-b-[3px] border-b-primary text-primary pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Insights</p>
+</a>
+<a class="flex flex-col items-center border-b-[3px] border-b-transparent text-gray-500 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Map View</p>
+</a>
+<a class="flex flex-col items-center border-b-[3px] border-b-transparent text-gray-500 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Predictive</p>
+</a>
+</div>
+</div>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-3 p-4">
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-gray-800 border border-[#d1e4e6] dark:border-gray-700 shadow-sm">
+<p class="text-gray-500 dark:text-gray-400 text-xs font-semibold uppercase tracking-wider">Alerts Today</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#0e191b] dark:text-white text-2xl font-extrabold">124</p>
+<p class="text-[#078834] text-xs font-bold">+12%</p>
+</div>
+<div class="h-1.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[65%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-gray-800 border border-[#d1e4e6] dark:border-gray-700 shadow-sm">
+<p class="text-gray-500 dark:text-gray-400 text-xs font-semibold uppercase tracking-wider">Avg pH Level</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#0e191b] dark:text-white text-2xl font-extrabold">7.4</p>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+<div class="h-1.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-orange-400 rounded-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- Pollution Heatmap Section -->
+<div class="px-4 py-2">
+<div class="flex justify-between items-end mb-3">
+<h3 class="text-[#0e191b] dark:text-white text-lg font-bold leading-tight tracking-tight">Pollution Heatmap</h3>
+<span class="text-primary text-xs font-bold flex items-center gap-1">Live <span class="size-2 bg-red-500 rounded-full animate-pulse"></span></span>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden border border-[#d1e4e6] dark:border-gray-700 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Satellite map of a river with colorful heatmap overlays indicating pollution zones" data-location="Yamuna River, Delhi" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUXlJEyFzSG7esGMcinWC_Ui6UmJNw6IjkPuULoS3gkMhBKGEg_t_VZp12viHJpl9XqeXpNVv-c2gzG63OjHLFVcRYHHb3q3C_9SvE2Z3aWTT3cgFyyfE59bwZ1WCPCAPDMWVJKKMZ7tMxu3YNZ-LP7TM4F3HuN9HZXYzqLdypwtIofiOyTX2kiZnGK_vnJvHM1PrJd1ecOfVzZlXGztmSLwO_l6XdDmbPyL8-IpwOKFcp4go6PWxkginvjYljM_T3XoCn-PVyEwA');"></div>
+<div class="absolute bottom-3 left-3 flex flex-col gap-1">
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur p-2 rounded-lg flex items-center gap-2 border border-white/20">
+<div class="size-3 rounded-full bg-red-500"></div>
+<span class="text-[10px] font-bold dark:text-white">Critical: Okhla Barrage</span>
+</div>
+</div>
+<div class="absolute top-3 right-3 flex flex-col gap-2">
+<button class="size-8 bg-white/90 dark:bg-black/80 backdrop-blur rounded-lg flex items-center justify-center text-primary border border-white/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+</button>
+<button class="size-8 bg-white/90 dark:bg-black/80 backdrop-blur rounded-lg flex items-center justify-center text-primary border border-white/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Prediction Graphs -->
+<div class="p-4">
+<div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-[#d1e4e6] dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-sm font-bold text-[#0e191b] dark:text-white">Water Quality Trends</h4>
+<p class="text-xs text-gray-500">AI-Powered 7-Day Forecast</p>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-wide">Predictive AI</span>
+</div>
+<div class="h-32 w-full flex items-end justify-between gap-1">
+<!-- Mock Bar Chart/Graph -->
+<div class="w-full h-24 bg-primary/20 rounded-t-md relative flex items-end">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="w-full h-[60%] bg-primary rounded-t-md"></div>
+</div>
+<div class="w-full h-20 bg-primary/20 rounded-t-md relative flex items-end">
+<div class="w-full h-[40%] bg-primary rounded-t-md"></div>
+</div>
+<div class="w-full h-28 bg-primary/20 rounded-t-md relative flex items-end">
+<div class="w-full h-[80%] bg-primary rounded-t-md"></div>
+</div>
+<div class="w-full h-32 bg-primary/20 rounded-t-md relative flex items-end">
+<div class="w-full h-[95%] bg-primary rounded-t-md"></div>
+</div>
+<div class="w-full h-24 bg-primary/20 rounded-t-md relative flex items-end border-2 border-dashed border-primary">
+<div class="w-full h-[55%] bg-primary/50 rounded-t-md"></div>
+</div>
+<div class="w-full h-20 bg-primary/20 rounded-t-md relative flex items-end border-2 border-dashed border-primary">
+<div class="w-full h-[35%] bg-primary/50 rounded-t-md"></div>
+</div>
+</div>
+<div class="flex justify-between mt-3 text-[10px] font-bold text-gray-400">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span class="text-primary font-extrabold">FRI</span><span>SAT</span>
+</div>
+</div>
+</div>
+<!-- Verification Queue -->
+<div class="px-4">
+<h3 class="text-[#0e191b] dark:text-white text-lg font-bold pb-3">Verification Queue</h3>
+<div class="flex flex-col gap-3">
+<!-- Report Card 1 -->
+<div class="bg-white dark:bg-gray-800 border border-[#d1e4e6] dark:border-gray-700 rounded-xl p-4 shadow-sm flex gap-4">
+<div class="size-16 rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of murky water with industrial foam on the surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLPyGPdEGQ9L1IC4fc44XuwFpaSDMyUhpzVtxpdHRBIigRM876oJefsQZPxE6JA_zigZxRgc1N3mukHXPMCqLzUTRR2gScQ7UY5KFxl912gKi_qpqXz-Uv6uB4hZuXUjh1tug3A1VgjYu7qi0-dfgxnuoRkeXhi9KRbvB1hA_3e42KGAH99me_Z2eyUVueEFy37-XL0QJ-ImJk4pRL33ecPJgYLDRtKFZw2gO2c2JGySUsJmcUO1w6W9kRgl3_QgkOa2U27JUUphM"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<p class="text-sm font-bold truncate">Industrial Discharge</p>
+<span class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">High</span>
+</div>
+<p class="text-xs text-gray-500 truncate mb-3">Sector 62, Noida Canal</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary text-white text-[11px] font-bold rounded-lg shadow-sm">Verify</button>
+<button class="flex-1 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[11px] font-bold rounded-lg">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- Report Card 2 -->
+<div class="bg-white dark:bg-gray-800 border border-[#d1e4e6] dark:border-gray-700 rounded-xl p-4 shadow-sm flex gap-4">
+<div class="size-16 rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Group of citizens pointing at a blocked water drainage pipe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvmDUopOb-0C4QE6Qy3z9fI5zvOnJWNjembOYTBcuCiDr_gzvpGmEqxL50fdyDmq16f7z62daLqBuxJWCkAQ6JPtulWUYLCldC43Ugii0sdoHCDPOXHS-zQrp1_-9H5Sge-MtxZQAxvol7s_wd0J-mqlJONjo5yv4ELVazRwh9BJPPa-4vRzc71FekN0MMwmE4li2u57pPTe8WjaE9ERBMXRrZD5Y79cJuy-UIqcDXr77La0pExCROP5KsvfXfNkLmjtug1dPrebY"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<p class="text-sm font-bold truncate">Waste Dumping</p>
+<span class="text-[10px] font-bold text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded">Med</span>
+</div>
+<p class="text-xs text-gray-500 truncate mb-3">Yamuna Ghat 4, Delhi</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary text-white text-[11px] font-bold rounded-lg shadow-sm">Verify</button>
+<button class="flex-1 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[11px] font-bold rounded-lg">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- iOS Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-black/90 backdrop-blur-xl border-t border-[#d1e4e6] dark:border-gray-800 px-6 py-4 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-[1]" style="font-size: 24px;">grid_view</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 24px;">map</span>
+<span class="text-[10px] font-bold">Map</span>
+</button>
+<div class="relative -top-6">
+<button class="size-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 24px;">analytics</span>
+<span class="text-[10px] font-bold">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<span class="text-[10px] font-bold">Account</span>
+</button>
+</div>
+</body></html>

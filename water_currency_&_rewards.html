@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JalRakshak - Water Currency &amp; Rewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c2cc",
+                        "background-light": "#f7fcfc",
+                        "background-dark": "#1f262e",
+                        "accent-gold": "#FFE37D",
+                        "success-green": "#078832",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .bento-card-large {
+            grid-column: span 2;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d] dark:text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col max-w-[480px] mx-auto overflow-x-hidden border-x border-gray-100 dark:border-gray-800">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 backdrop-blur-md bg-opacity-80">
+<div class="text-[#0c1c1d] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Jal Credits</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-transparent text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<!-- Stats (Bento Card Large) -->
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-primary/10 border border-primary/20 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white/80 text-base font-medium font-display">Your Balance</p>
+<div class="bg-primary/20 px-2 py-1 rounded text-[10px] font-bold text-primary uppercase tracking-wider">Verified</div>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-[#0c1c1d] dark:text-white tracking-tight text-4xl font-bold leading-tight font-display">1,250</p>
+<p class="text-primary text-lg font-semibold">Credits</p>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-success-green text-sm">trending_up</span>
+<p class="text-success-green text-sm font-medium leading-normal">≈ ₹125.00 Value</p>
+</div>
+</div>
+<!-- ButtonGroup -->
+<div class="flex justify-center">
+<div class="flex flex-1 gap-3 w-full">
+<button class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl h-12 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+<span>Redeem</span>
+</button>
+<button class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl h-12 bg-white dark:bg-white/10 text-[#0c1c1d] dark:text-white border border-gray-200 dark:border-white/10 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+<span>Donate</span>
+</button>
+<button class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl h-12 bg-white dark:bg-white/10 text-[#0c1c1d] dark:text-white border border-gray-200 dark:border-white/10 text-sm font-bold">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+<span>Earn</span>
+</button>
+</div>
+</div>
+<!-- ProgressBar (Level) -->
+<div class="flex flex-col gap-3 p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10">
+<div class="flex gap-6 justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-accent-gold/20 flex items-center justify-center text-accent-gold">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1">military_tech</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-white text-base font-bold font-display">Water Warrior Lvl 2</p>
+</div>
+<p class="text-[#0c1c1d] dark:text-white/70 text-sm font-semibold">1,250 / 2,000</p>
+</div>
+<div class="rounded-full bg-gray-100 dark:bg-white/10 h-2.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 62.5%;"></div>
+</div>
+<p class="text-[#459ca1] dark:text-primary/70 text-xs font-medium">750 credits to reach Level 3: 'Hydro Master'</p>
+</div>
+<!-- SectionHeader: Leaderboard -->
+<div class="pt-2">
+<div class="flex justify-between items-end px-1">
+<h2 class="text-[#0c1c1d] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] font-display">Indiranagar Rank</h2>
+<p class="text-primary text-sm font-bold">View All</p>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-3">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center p-3 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10">
+<div class="relative mb-2">
+<div class="size-12 rounded-full overflow-hidden border-2 border-gray-200">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of a young woman with smiling face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkTLwW2FVFR1nPwwhKtOY33bqTKJr5_dxyNWbnVctBAUXOrkXh_HBOZnPdLqDOa8vXfNnu_8uH91qz2PqupNE7c4D956xDvZTkE6I9T3SK48D1LYN4Y8TwpjypQqo-h16K8Cz-x-8HUhIyG7Oz6pyXjqiztHBX7FrTqi3hrDYgQd42ICJ3Nvw2SoI3s90WvZH8S3OeYjp8I762nrVz2jeKOsLjOBCmJ8lGY0i4joPZYWqVYDljFb5sufwJKf5sigPoSCPRXkknJQs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 size-5 bg-gray-400 rounded-full border-2 border-white dark:border-[#1f262e] flex items-center justify-center text-[10px] text-white font-bold">2</div>
+</div>
+<p class="text-xs font-bold truncate w-full text-center">Priya S.</p>
+<p class="text-[10px] text-primary font-bold">2,140 pts</p>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center p-3 rounded-xl bg-primary/5 border-2 border-primary shadow-sm -mt-2">
+<div class="relative mb-2">
+<div class="size-14 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of a focused man in glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiWCMj2m-yQK2DlOCp44v0vhxy-VUa_9MEQakYZKnxaJXzjvn9M-jSmR_SfeZx7spTkO-20xnwyKbPR4HuAS6qyFwh1_WxtU3bQkGJ88PppmFOIe6i5JyBUaI9OJiTxGsPsU-D0k_kbOCA7iAXFkv9zVCv4rMzcoJv_cfJgGedZiaiTNZcz9nlZ0R0Ywr9VA8jCf2d26XoIoZmIsYtrZd_Ge6ZV8HL6rRjFFzx5bKvbPBSY74zB1a6j61e21ciDcYzNI7T_0Qgoko"/>
+</div>
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 text-accent-gold">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1">workspace_premium</span>
+</div>
+<div class="absolute -bottom-1 -right-1 size-6 bg-accent-gold rounded-full border-2 border-white dark:border-[#1f262e] flex items-center justify-center text-xs text-[#0c1c1d] font-bold">1</div>
+</div>
+<p class="text-xs font-black truncate w-full text-center">Arjun K.</p>
+<p class="text-[10px] text-primary font-bold">2,890 pts</p>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center p-3 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10">
+<div class="relative mb-2">
+<div class="size-12 rounded-full overflow-hidden border-2 border-gray-200">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of a man with casual look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBE_gHo77u-fXkJl3xx3MfCl2-Xnk6Tf9TB2Sx4FSHeZqeuiMCTMXDko1W2oCp57FHbpNb11zljOshsJjx8j8JoP9PMWG6Mc-zDKKEdwnko1pSv4euK-hyu8p_jGqsIlfvoayYAoMdNiMHEcF8-hfmwdSRRFd6OZhiRYNrw6nh7bSdMU2Z36zVKRex0Gn8J0R_XjMAuM_2_eyWNA4tzdkx3oZlJh6Y97g5Cd1ViHCYGVne1hT6kEt58j1Icc0_TyhoVpnM_6IS6L8"/>
+</div>
+<div class="absolute -bottom-1 -right-1 size-5 bg-orange-400 rounded-full border-2 border-white dark:border-[#1f262e] flex items-center justify-center text-[10px] text-white font-bold">3</div>
+</div>
+<p class="text-xs font-bold truncate w-full text-center">Sidd M.</p>
+<p class="text-[10px] text-primary font-bold">1,980 pts</p>
+</div>
+</div>
+<p class="text-center mt-3 text-xs text-gray-500 dark:text-gray-400">You are <span class="text-primary font-bold">#12</span>. Earn 730 more credits to hit Top 10!</p>
+</div>
+<!-- Transaction History -->
+<div class="pt-4 pb-20">
+<h2 class="text-[#0c1c1d] dark:text-white text-[20px] font-bold px-1 mb-4 font-display">History</h2>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#0c1c1d] dark:text-white">Fixed Leaking Tap</p>
+<p class="text-[10px] text-gray-500 font-medium">Verified by AI • Yesterday</p>
+</div>
+<p class="text-sm font-bold text-success-green">+50</p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#0c1c1d] dark:text-white">Community Cleanup</p>
+<p class="text-[10px] text-gray-500 font-medium">Group Activity • 2 days ago</p>
+</div>
+<p class="text-sm font-bold text-success-green">+200</p>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 opacity-70">
+<div class="size-10 rounded-lg bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#0c1c1d] dark:text-white">Amazon Voucher</p>
+<p class="text-[10px] text-gray-500 font-medium">Redemption • 5 days ago</p>
+</div>
+<p class="text-sm font-bold text-red-500">-500</p>
+</div>
+</div>
+</div>
+</div>
+<!-- iOS Style Tab Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-white/10 flex justify-around items-center py-3 px-6 z-20">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-bold">Monitor</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">wallet</span>
+<span class="text-[10px] font-bold">Rewards</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</div>
+<!-- Progress/Safe Area Spacer -->
+<div class="h-6 bg-transparent"></div>
+</div>
+</body></html>
